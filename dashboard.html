@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Pesananku</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6">
+    <div class="container mx-auto">
+        <header class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-orange-600">Dashboard Admin</h1>
+            <button id="logoutBtn" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md">Logout</button>
+        </header>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 id="formTitle" class="text-2xl font-bold mb-4">Tambah Menu Baru</h2>
+            <form id="menuForm">
+                <input type="hidden" id="menuId"> <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" id="name" placeholder="Nama Menu" class="px-4 py-2 border rounded-lg" required>
+                    <input type="number" id="price" placeholder="Harga" class="px-4 py-2 border rounded-lg" required>
+                    <input type="text" id="category" placeholder="Kategori (makanan-utama, minuman, dessert)" class="px-4 py-2 border rounded-lg" required>
+                    <input type="text" id="image" placeholder="URL Gambar" class="px-4 py-2 border rounded-lg" required>
+                    <textarea id="description" placeholder="Deskripsi Menu" class="md:col-span-2 px-4 py-2 border rounded-lg" rows="3" required></textarea>
+                </div>
+                <div class="mt-4 flex gap-4">
+                    <button type="submit" id="submitBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">Simpan</button>
+                    <button type="button" id="cancelBtn" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg hidden">Batal</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
+            <h2 class="text-2xl font-bold mb-4">Daftar Menu</h2>
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="border-b">
+                        <th class="p-2">Nama</th>
+                        <th class="p-2">Harga</th>
+                        <th class="p-2">Kategori</th>
+                        <th class="p-2">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="menuList">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
