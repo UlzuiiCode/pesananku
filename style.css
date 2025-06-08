@@ -1,0 +1,52 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar for cart items */
+#cartItemsContainer::-webkit-scrollbar {
+    width: 8px;
+}
+#cartItemsContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+#cartItemsContainer::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+#cartItemsContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Cart sidebar open state */
+#cartSidebar.open {
+    transform: translateX(0);
+}
+/* Overlay active state */
+#overlay.active {
+    display: block;
+}
+
+.menu-item-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.menu-item-image.loaded {
+    opacity: 1;
+}
+
+/* Active state for category buttons */
+.category-btn.active {
+    background-color: #2563eb; /* Tailwind's blue-600 */
+    color: white;
+}
+.category-btn:not(.active) {
+    background-color: #e5e7eb; /* Tailwind's gray-200 */
+    color: #374151; /* Tailwind's gray-700 */
+}
+.category-btn:not(.active):hover {
+    background-color: #d1d5db; /* Tailwind's gray-300 */
+}
+
+/* Catatan: Sebagian besar styling masih ditangani oleh Tailwind CSS yang dimuat melalui CDN di HTML. */
+/* File CSS ini berisi gaya kustom yang tidak mudah dicapai atau lebih bersih jika dipisahkan. */
